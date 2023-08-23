@@ -2,13 +2,13 @@ name: "Terraform GitHub Actions"
 on:
   push:
     branches:
-      - main 
+      - main
 
 jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-latest
-    environment: DEV 
+    environment: DEV
 
     steps:
       - name: Checkout
@@ -32,5 +32,5 @@ jobs:
         run: terraform apply -auto-approve
         env:
           AWS_DEFAULT_REGION: us-east-1
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_KEY }}
